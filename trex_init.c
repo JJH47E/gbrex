@@ -10,10 +10,9 @@
 #define SPRITE_4 3
 #define JUMP_STRENGTH -8
 
-int velocity = 0;
-int y = GROUND_Y;
-int x = 40;
-uint8_t sprite_nbs[4];
+int8_t velocity = 0;
+uint8_t y = GROUND_Y;
+uint8_t x = 40;
 
 void move_trex(uint8_t target_x, uint8_t target_y) {
   x = target_x;
