@@ -15,11 +15,13 @@ void main(void)
   while(1) {
     wait_vbl_done();
 
+    tick_trex();
+    tick_cactus();
+
     if (joypad() & J_A) {
       try_jump_trex();
     }
-    tick_trex();
-    tick_cactus();
+
     delay(20);
   }
 }
