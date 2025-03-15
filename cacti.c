@@ -71,13 +71,6 @@ void respawn_cactus(uint8_t cactus_index) {
 }
 
 void tick_cactus() {
-  // Debug
-  if (joypad() & J_B) {
-    char buffer[50];
-    sprintf(buffer, ": %d", cactus_x[0]);
-    puts(buffer);
-  }
-
   for (uint8_t i = 0; i < MAX_CACTI; ++i) {
     if (is_present[i]) {
       scroll_cactus(i, -2, 0);

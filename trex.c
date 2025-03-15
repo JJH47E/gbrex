@@ -10,8 +10,17 @@
 
 bool isPaused = false;
 
+enum State {
+  MENU,
+  INGAME,
+  GAMEOVER
+};
+
+enum State game_state;
+
 void main(void)
 {
+  game_state = INGAME;
   set_increment_score_callback(increment_score);
 
   init_trex();
@@ -23,22 +32,24 @@ void main(void)
   while(1) {
     vsync();
 
-    if (!isPaused) {
-      tick_trex();
-      tick_cactus();
-      tick_score();
+    if (game_state == INGAME) {
+      if (!isPaused) {
+        tick_trex();
+        tick_cactus();
+        tick_score();
 
-      if (joypad() & J_A) {
-        try_jump_trex();
+        if (joypad() & J_A) {
+          try_jump_trex();
+        }
+      } else {
+
       }
-    } else {
 
-    }
-
-    if (joypad() & J_START) {
+      if (joypad() & J_START) {
         isPaused = !isPaused;
         waitpadup();
       }
+    }
 
     delay(15);
   }
