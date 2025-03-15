@@ -13,6 +13,7 @@
 int velocity = 0;
 int y = GROUND_Y;
 int x = 40;
+uint8_t sprite_nbs[4];
 
 void move_trex(uint8_t target_x, uint8_t target_y) {
   x = target_x;

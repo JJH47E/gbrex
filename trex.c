@@ -13,6 +13,7 @@ void main(void)
 
   init_trex();
   init_cacti();
+  init_score();
   
   SHOW_SPRITES;
   
@@ -21,6 +22,7 @@ void main(void)
 
     tick_trex();
     tick_cactus();
+    tick_score();
 
     if (joypad() & J_A) {
       try_jump_trex();
