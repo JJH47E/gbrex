@@ -1,1 +1,2 @@
-#define GROUND_Y 80
+#define GROUND_Y 120
+#define GRAVITY 1
