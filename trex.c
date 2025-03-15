@@ -4,16 +4,20 @@
 #include <string.h>
 #include "trex_init.c"
 #include "cacti.c"
+#include "globals.c"
+#include "scoreboard.c"
 
 void main(void)
 {
+  set_increment_score_callback(increment_score);
+
   init_trex();
   init_cacti();
   
   SHOW_SPRITES;
   
   while(1) {
-    wait_vbl_done();
+    vsync();
 
     tick_trex();
     tick_cactus();

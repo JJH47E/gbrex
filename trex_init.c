@@ -1,6 +1,9 @@
 #include "trex_sprite.c"
 #include "globals.c"
 
+#ifndef TREX_C
+#define TREX_C
+
 #define SPRITE_1 0
 #define SPRITE_2 1
 #define SPRITE_3 2
@@ -52,3 +55,5 @@ void init_trex() {
 
   move_trex(20, y);
 }
+
+#endif

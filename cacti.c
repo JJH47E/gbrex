@@ -3,6 +3,9 @@
 #include "cactus_sprite.c"
 #include "rand.c"
 
+#ifndef CACTI_C
+#define CACTI_C
+
 #define MAX_CACTI 3
 #define SPAWN_POSITION 190
 
@@ -59,7 +62,7 @@ void despawn_cactus(uint8_t cactus_index) {
     }
   }
 
-  respawn_ticks[cactus_index] = get_random(30);
+  respawn_ticks[cactus_index] = respawn_tick;
 }
 
 void respawn_cactus(uint8_t cactus_index) {
@@ -79,9 +82,10 @@ void tick_cactus() {
     if (is_present[i]) {
       scroll_cactus(i, -2, 0);
 
-      // Integer under-flow is a feature. If off screen, despawn
+      // Integer under-flow is a feature. If off screen, despawn & increment score
       if (cactus_x[i] > 200) {
         if (cactus_x[i] < 235) {
+          increment_score_callback();
           despawn_cactus(i);
         }
       }
@@ -119,3 +123,5 @@ void init_cacti() {
     despawn_cactus(i);
   }
 }
+
+#endif

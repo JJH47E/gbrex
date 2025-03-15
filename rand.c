@@ -1,6 +1,9 @@
 #include <gb/gb.h>
 #include <rand.h>
 
+#ifndef RAND_C
+#define RAND_C
+
 void init_rand() {
   UBYTE seed = DIV_REG;
   seed |= (UWORD)DIV_REG << 8;
@@ -18,3 +21,5 @@ uint8_t get_random(uint8_t min) {
 
   return r;
 }
+
+#endif
