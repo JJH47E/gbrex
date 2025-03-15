@@ -7,7 +7,7 @@ void increment_score() {
     score++;
 }
 
-void reset() {
+void reset_score() {
     score = 0;
 }
 
