@@ -6,6 +6,9 @@
 #include "cacti.c"
 #include "globals.c"
 #include "scoreboard.c"
+#include <stdbool.h>
+
+bool isPaused = false;
 
 void main(void)
 {
@@ -20,14 +23,23 @@ void main(void)
   while(1) {
     vsync();
 
-    tick_trex();
-    tick_cactus();
-    tick_score();
+    if (!isPaused) {
+      tick_trex();
+      tick_cactus();
+      tick_score();
 
-    if (joypad() & J_A) {
-      try_jump_trex();
+      if (joypad() & J_A) {
+        try_jump_trex();
+      }
+    } else {
+
     }
 
-    delay(20);
+    if (joypad() & J_START) {
+        isPaused = !isPaused;
+        waitpadup();
+      }
+
+    delay(15);
   }
 }
