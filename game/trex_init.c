@@ -46,8 +46,6 @@ void try_jump_trex() {
 }
 
 void init_trex() {
-  set_sprite_data(0, 4, trex_sprite_tiles);
-
   set_sprite_tile(SPRITE_1, 0);
   set_sprite_tile(SPRITE_2, 1);
   set_sprite_tile(SPRITE_3, 2);

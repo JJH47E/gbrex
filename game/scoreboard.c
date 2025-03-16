@@ -34,11 +34,6 @@ void tick_score() {
 }
 
 void init_score() {
-  // Set number sprite data
-  for (uint8_t i = 0; i < 10; i++) {
-    set_sprite_data(30 + i, 1, number_sprites[i]);
-  }
-
   move_sprite(NB_DIGITS, 150, 30);
   move_sprite(NB_TENS, 142, 30);
   move_sprite(NB_HUNDREDS, 134, 30);

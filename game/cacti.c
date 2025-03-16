@@ -98,7 +98,6 @@ void tick_cactus() {
 
 void init_cacti() {
   init_rand();
-  set_sprite_data(4, 4, cactus_sprite_tiles);
 
   set_sprite_tile(4, 4);
   set_sprite_tile(5, 5);

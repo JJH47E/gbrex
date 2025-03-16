@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "game/game.c"
+#include "menu/menu.c"
 
 enum State {
   MENU,
@@ -12,11 +13,27 @@ enum State {
 
 enum State game_state;
 
+// Load tiles into RAM
+void load_tiles() {
+  // Load logo data
+  set_sprite_data(100, 24, logo_sprite_tiles);
+  // Load cactus data
+  set_sprite_data(4, 4, cactus_sprite_tiles);
+  // Load TREX data
+  set_sprite_data(0, 4, trex_sprite_tiles);
+  // Load scoreboard data
+  for (uint8_t i = 0; i < 10; i++) {
+    set_sprite_data(30 + i, 1, number_sprites[i]);
+  }
+}
+
 void main(void)
 {
-  game_state = INGAME;
+  game_state = MENU;
 
-  init_game();
+  load_tiles();
+  init_menu();
+  //init_game();
   
   SHOW_SPRITES;
   
@@ -25,7 +42,10 @@ void main(void)
 
     if (game_state == INGAME) {
       tick_game();
+    } else if (game_state == MENU) {
+      tick_menu();
     }
+
 
     delay(15);
   }
