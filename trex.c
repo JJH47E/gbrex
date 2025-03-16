@@ -4,6 +4,7 @@
 #include <string.h>
 #include "game/game.c"
 #include "menu/menu.c"
+#include "game_over/game_over.c"
 #include "sprites/alphabet.c"
 #include "globals.c"
 
@@ -45,6 +46,8 @@ void main(void)
         case INGAME:
           init_game();
           break;
+        case GAMEOVER:
+          init_game_over();
         default:
           break;
       }
@@ -58,6 +61,8 @@ void main(void)
       case INGAME:
         tick_game();
         break;
+      case GAMEOVER:
+        tick_game_over();
       default:
         break;
     }
