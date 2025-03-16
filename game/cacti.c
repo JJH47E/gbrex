@@ -1,7 +1,8 @@
 #include <stdbool.h>
-#include "globals.c"
+#include "../globals.c"
 #include "cactus_sprite.c"
-#include "rand.c"
+#include "../rand.c"
+#include "scoreboard.c"
 
 #ifndef CACTI_C
 #define CACTI_C
@@ -41,6 +42,7 @@ void despawn_cactus(uint8_t cactus_index) {
   is_present[cactus_index] = false;
   uint8_t respawn_tick = get_random(30);
 
+  // TODO: make pure
   for (uint8_t i = 0; i < MAX_CACTI; i++) {
     if (i == cactus_index) {
       continue;
@@ -78,7 +80,7 @@ void tick_cactus() {
       // Integer under-flow is a feature. If off screen, despawn & increment score
       if (cactus_x[i] > 200) {
         if (cactus_x[i] < 235) {
-          increment_score_callback();
+          increment_score();
           despawn_cactus(i);
         }
       }

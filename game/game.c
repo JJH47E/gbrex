@@ -1,6 +1,6 @@
 #include "trex_init.c"
 #include "cacti.c"
-#include "globals.c"
+#include "../globals.c"
 #include "scoreboard.c"
 #include <stdbool.h>
 

@@ -1,5 +1,5 @@
 #include "trex_sprite.c"
-#include "globals.c"
+#include "../globals.c"
 
 #ifndef TREX_C
 #define TREX_C

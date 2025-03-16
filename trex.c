@@ -2,7 +2,7 @@
 #include <gb/drawing.h>
 #include <stdio.h>
 #include <string.h>
-#include "game.c"
+#include "game/game.c"
 
 enum State {
   MENU,
@@ -15,7 +15,6 @@ enum State game_state;
 void main(void)
 {
   game_state = INGAME;
-  set_increment_score_callback(increment_score);
 
   init_game();
   
