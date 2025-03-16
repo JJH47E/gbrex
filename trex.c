@@ -4,6 +4,7 @@
 #include <string.h>
 #include "game/game.c"
 #include "menu/menu.c"
+#include "sprites/alphabet.c"
 
 enum State {
   MENU,
@@ -24,6 +25,10 @@ void load_tiles() {
   // Load scoreboard data
   for (uint8_t i = 0; i < 10; i++) {
     set_sprite_data(30 + i, 1, number_sprites[i]);
+  }
+  // Load alphabet & whitespace data
+  for (uint8_t i = 0; i < 27; i++) {
+    set_sprite_data(40 + i, 1, alphabet_sprites[i]);
   }
 }
 
