@@ -98,12 +98,10 @@ void init_cacti() {
   move_cactus(0, 160, GROUND_Y);
 
   for (uint8_t i = 0; i < MAX_CACTI; ++i) {
-    set_sprite_data((i + 1) * 4, 4, cactus_sprite_tiles);
-
-    set_sprite_tile(cactus_sprite_indices[i][0], 4 + (i * 4));
-    set_sprite_tile(cactus_sprite_indices[i][1], 5 + (i * 4));
-    set_sprite_tile(cactus_sprite_indices[i][2], 6 + (i * 4));
-    set_sprite_tile(cactus_sprite_indices[i][3], 7 + (i * 4));
+    set_sprite_tile(cactus_sprite_indices[i][0], 4);
+    set_sprite_tile(cactus_sprite_indices[i][1], 5);
+    set_sprite_tile(cactus_sprite_indices[i][2], 6);
+    set_sprite_tile(cactus_sprite_indices[i][3], 7);
 
     despawn_cactus(i);
   }
