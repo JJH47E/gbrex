@@ -3,20 +3,49 @@
 #include "../globals.c"
 #include "scoreboard.c"
 #include <stdbool.h>
+#include "../text.c"
 
 #ifndef GAME_C
 #define GAME_C
 
-bool isPaused = false;
+bool is_paused = false;
+bool is_pause_toggled = false;
 
 void init_game() {
   init_trex();
   init_cacti();
   init_score();
+
+  write_text("Paused", 6, 30, 56, 68);
+  hide_paused_text();
+}
+
+void show_paused_text() {
+  for (uint8_t i = 0; i < 6; i++) {
+    move_sprite(30 + i, 64 + (i * 8), 68);
+  }
+}
+
+void hide_paused_text() {
+  for (uint8_t i = 0; i < 6; i++) {
+    move_sprite(30 + i, 0, 0);
+  }
 }
 
 void tick_game() {
-  if (!isPaused) {
+  if (joypad() & J_START) {
+    is_paused = !is_paused;
+
+    is_pause_toggled = true;
+
+    waitpadup();
+  }
+
+  if (!is_paused) {
+    if (is_pause_toggled) {
+      hide_paused_text();
+    }
+
     tick_trex();
     tick_cactus();
     tick_score();
@@ -25,12 +54,18 @@ void tick_game() {
       try_jump_trex();
     }
   } else {
-
+    if (is_pause_toggled) {
+      show_paused_text();
+    }
   }
 
-  if (joypad() & J_START) {
-    isPaused = !isPaused;
-    waitpadup();
+  is_pause_toggled = false;
+}
+
+void dispose_game() {
+  // Move all sprites off-screen
+  for (uint8_t i = 0; i < 40; i++) {
+    move_sprite(i, 0, 0);
   }
 }
 

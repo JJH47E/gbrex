@@ -5,14 +5,7 @@
 #include "game/game.c"
 #include "menu/menu.c"
 #include "sprites/alphabet.c"
-
-enum State {
-  MENU,
-  INGAME,
-  GAMEOVER
-};
-
-enum State game_state;
+#include "globals.c"
 
 // Load tiles into RAM
 void load_tiles() {
@@ -38,19 +31,36 @@ void main(void)
 
   load_tiles();
   init_menu();
-  //init_game();
   
   SHOW_SPRITES;
   
   while(1) {
     vsync();
 
-    if (game_state == INGAME) {
-      tick_game();
-    } else if (game_state == MENU) {
-      tick_menu();
+    if (loading_new_scene) {
+      switch (game_state) {
+        case MENU:
+          init_menu();
+          break;
+        case INGAME:
+          init_game();
+          break;
+        default:
+          break;
+      }
+      loading_new_scene = false;
     }
 
+    switch (game_state) {
+      case MENU:
+        tick_menu();
+        break;
+      case INGAME:
+        tick_game();
+        break;
+      default:
+        break;
+    }
 
     delay(15);
   }

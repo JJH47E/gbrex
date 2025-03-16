@@ -55,6 +55,17 @@ void tick_menu() {
     is_tip_shown = !is_tip_shown;
     toggle_tip_ticks = TICK_TOGGLE;
   }
+
+  if (joypad() & J_START) {
+    transition_scene(INGAME);
+  }
+}
+
+void dispose_menu() {
+  // Move all sprites off-screen
+  for (uint8_t i = 0; i < 40; i++) {
+    move_sprite(i, 0, 0);
+  }
 }
 
 #endif
