@@ -13,6 +13,7 @@ enum State {
   GAMEOVER
 };
 
+uint16_t score = 0;
 enum State game_state = MENU;
 bool loading_new_scene = false;
 

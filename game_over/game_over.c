@@ -1,4 +1,4 @@
-#include "../game/scoreboard.c"
+#include "../globals.c"
 
 #ifndef GAME_OVER_C
 #define GAME_OVER_C
@@ -11,7 +11,6 @@ void init_game_over() {
 
   write_text("Score", 5, 8, 44, 46);
 
-  // convert score to string
   char score_buffer[3];
   sprintf(score_buffer, "%02d", score);
   write_text(score_buffer, 3, 13, 100, 46);

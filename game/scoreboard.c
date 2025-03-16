@@ -7,7 +7,6 @@
 #define NB_TENS 38
 #define NB_HUNDREDS 37
 
-uint16_t score = 0;
 uint8_t unit_sprite_nb = 16;
 
 void increment_score() {
