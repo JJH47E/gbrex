@@ -7,11 +7,10 @@
 #ifndef CACTI_C
 #define CACTI_C
 
-#define MAX_CACTI 3
 #define SPAWN_POSITION 190
 
-uint8_t cactus_y[MAX_CACTI];
-uint8_t cactus_x[MAX_CACTI];
+uint8_t cactus_y[MAX_CACTI] = {0, 0, 0};
+uint8_t cactus_x[MAX_CACTI] = {0, 0, 0};
 uint8_t respawn_ticks[MAX_CACTI];
 bool is_present[MAX_CACTI];
 uint8_t cactus_sprite_indices[MAX_CACTI][4] = {
@@ -38,7 +37,7 @@ void scroll_cactus(uint8_t cactus_index, int8_t delta_x, int8_t delta_y) {
 }
 
 void despawn_cactus(uint8_t cactus_index) {
-  move_cactus(cactus_index, cactus_x[cactus_index], 0);
+  move_cactus(cactus_index, 0, 0);
   is_present[cactus_index] = false;
 
   uint8_t max_ticks = 0;

@@ -58,6 +58,7 @@ void tick_menu() {
 
   if (joypad() & J_START) {
     transition_scene(INGAME);
+    return;
   }
 }
 

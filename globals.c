@@ -5,6 +5,7 @@
 
 #define GROUND_Y 120
 #define GRAVITY 1
+#define MAX_CACTI 3
 
 enum State {
   MENU,
