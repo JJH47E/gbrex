@@ -2,13 +2,7 @@
 #include <gb/drawing.h>
 #include <stdio.h>
 #include <string.h>
-#include "trex_init.c"
-#include "cacti.c"
-#include "globals.c"
-#include "scoreboard.c"
-#include <stdbool.h>
-
-bool isPaused = false;
+#include "game.c"
 
 enum State {
   MENU,
@@ -23,9 +17,7 @@ void main(void)
   game_state = INGAME;
   set_increment_score_callback(increment_score);
 
-  init_trex();
-  init_cacti();
-  init_score();
+  init_game();
   
   SHOW_SPRITES;
   
@@ -33,22 +25,7 @@ void main(void)
     vsync();
 
     if (game_state == INGAME) {
-      if (!isPaused) {
-        tick_trex();
-        tick_cactus();
-        tick_score();
-
-        if (joypad() & J_A) {
-          try_jump_trex();
-        }
-      } else {
-
-      }
-
-      if (joypad() & J_START) {
-        isPaused = !isPaused;
-        waitpadup();
-      }
+      tick_game();
     }
 
     delay(15);
