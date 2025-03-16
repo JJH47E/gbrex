@@ -1,5 +1,3 @@
-#include "../sprites/numbers.c"
-
 #ifndef SCOREBOARD_C
 #define SCOREBOARD_C
 
