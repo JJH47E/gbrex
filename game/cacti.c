@@ -40,31 +40,24 @@ void scroll_cactus(uint8_t cactus_index, int8_t delta_x, int8_t delta_y) {
 void despawn_cactus(uint8_t cactus_index) {
   move_cactus(cactus_index, cactus_x[cactus_index], 0);
   is_present[cactus_index] = false;
-  uint8_t respawn_tick = get_random(30);
 
-  // TODO: make pure
+  uint8_t max_ticks = 0;
+  uint8_t max_ticks_index = 0;
+
   for (uint8_t i = 0; i < MAX_CACTI; i++) {
-    if (i == cactus_index) {
-      continue;
-    }
-
-    if (respawn_tick > respawn_ticks[i]) {
-      if (respawn_tick - respawn_ticks[i] < 15) {
-        respawn_tick = get_random(30);
-        i = 0;
-      }
-    } else if (respawn_tick < respawn_ticks[i]) {
-      if (respawn_ticks[i] - respawn_tick) {
-        respawn_tick = get_random(30);
-        i = 0;
-      }
-    } else {
-      respawn_tick = get_random(30);
-      i = 0;
+    if (respawn_ticks[i] > max_ticks) {
+      max_ticks = respawn_ticks[i];
+      max_ticks_index = i;
     }
   }
 
-  respawn_ticks[cactus_index] = respawn_tick;
+  // This could be better
+  if (max_ticks < 30) {
+    max_ticks = 30;
+  }
+
+  uint8_t respawn_delta = get_random(30, 256 - max_ticks);
+  respawn_ticks[cactus_index] = max_ticks + respawn_delta;
 }
 
 void respawn_cactus(uint8_t cactus_index) {

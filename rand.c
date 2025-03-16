@@ -12,11 +12,15 @@ void init_rand() {
 }
 
 // Generates a random number between 0 & 255 - check this
-uint8_t get_random(uint8_t min) {
+uint8_t get_random(uint8_t min, uint8_t max) {
   uint8_t r = arand();
 
   if (r < min) {
     return min;
+  }
+
+  if (r > max) {
+    return max;
   }
 
   return r;
