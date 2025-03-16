@@ -6,5 +6,5 @@ This project uses the [GBDK](https://github.com/gbdk-2020/gbdk-2020) development
 
 ## Screenshots
 
-![Title Screen](https://raw.githubusercontent.com/JJH47E/gbrex/refs/heads/main/assets/title-screenshot.png "Title Screen")
-![Gameplay Screen](https://raw.githubusercontent.com/JJH47E/gbrex/refs/heads/main/assets/screenshot.png "Gameplay Screen")
+<img src="./assets/title-screenshot.png" alt="icon" width="256" height="256">
+<img src="./assets/screenshot.png" alt="icon" width="256" height="256">
