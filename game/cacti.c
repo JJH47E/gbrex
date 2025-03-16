@@ -8,6 +8,7 @@
 
 #define SPAWN_POSITION 190
 
+uint8_t random_seed;
 uint8_t cactus_y[MAX_CACTI] = {0, 0, 0};
 uint8_t cactus_x[MAX_CACTI] = {0, 0, 0};
 uint8_t respawn_ticks[MAX_CACTI];
@@ -39,23 +40,24 @@ void despawn_cactus(uint8_t cactus_index) {
   move_cactus(cactus_index, 0, 0);
   is_present[cactus_index] = false;
 
-  uint8_t max_ticks = 0;
-  uint8_t max_ticks_index = 0;
+  uint8_t respawn_delta;
+  bool valid_respawn_found = false;
 
-  for (uint8_t i = 0; i < MAX_CACTI; i++) {
-    if (respawn_ticks[i] > max_ticks) {
-      max_ticks = respawn_ticks[i];
-      max_ticks_index = i;
+  do {
+    valid_respawn_found = true;
+    respawn_delta = fast_random(random_seed);
+    random_seed = respawn_delta;
+
+    for (uint8_t i = 0; i < MAX_CACTI; i++) {
+      uint8_t diff = get_diff(respawn_delta, respawn_ticks[i]);
+
+      if (diff < 30) {
+        valid_respawn_found = false;
+      }
     }
-  }
+  } while (!valid_respawn_found);
 
-  // This could be better
-  if (max_ticks < 30) {
-    max_ticks = 30;
-  }
-
-  uint8_t respawn_delta = get_random(30, 256 - max_ticks);
-  respawn_ticks[cactus_index] = max_ticks + respawn_delta;
+  respawn_ticks[cactus_index] = respawn_delta;
 }
 
 void respawn_cactus(uint8_t cactus_index) {
@@ -89,6 +91,8 @@ void tick_cactus() {
 
 void init_cacti() {
   init_rand();
+
+  random_seed = get_random(50, 255);
 
   set_sprite_tile(4, 4);
   set_sprite_tile(5, 5);

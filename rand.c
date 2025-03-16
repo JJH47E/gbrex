@@ -25,4 +25,19 @@ uint8_t get_random(uint8_t min, uint8_t max) {
   return r;
 }
 
+uint8_t fast_random(uint8_t seed) {
+    seed = seed ^ (seed >> 4);
+    seed = seed * 117;
+    seed = seed ^ (seed >> 4);
+    return seed;
+}
+
+uint8_t get_diff(uint8_t rhs, uint8_t lhs) {
+  if (rhs > lhs) {
+    return rhs - lhs;
+  } else {
+    return lhs - rhs;
+  }
+}
+
 #endif
