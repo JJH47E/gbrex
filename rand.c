@@ -1,4 +1,3 @@
-#include <gb/gb.h>
 #include <rand.h>
 
 #ifndef RAND_C

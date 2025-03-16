@@ -1,12 +1,14 @@
-#include <gb/gb.h>
-#include <gb/drawing.h>
 #include <stdio.h>
-#include <string.h>
+#include <gb/gb.h>
+#include "globals.c"
 #include "game/game.c"
 #include "menu/menu.c"
 #include "game_over/game_over.c"
 #include "sprites/alphabet.c"
-#include "globals.c"
+#include "sprites/numbers.c"
+#include "game/cactus_sprite.c"
+#include "game/trex_sprite.c"
+#include "menu/logo_sprite.c"
 
 // Load tiles into RAM
 void load_tiles() {

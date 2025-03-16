@@ -1,3 +1,5 @@
+#include "globals.c"
+
 #ifndef TEXT_C
 #define TEXT_C
 

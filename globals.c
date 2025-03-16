@@ -1,7 +1,7 @@
+#include <ctype.h>
+
 #ifndef GLOBALS_C
 #define GLOBALS_C
-
-#include <ctype.h>
 
 #define GROUND_Y 120
 #define GRAVITY 1

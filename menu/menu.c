@@ -1,7 +1,6 @@
-#include "logo_sprite.c"
+#include <stdbool.h>
 #include "../globals.c"
 #include "../text.c"
-#include <stdbool.h>
 
 #ifndef MENU_C
 #define MENU_C
