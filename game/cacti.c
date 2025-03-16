@@ -1,6 +1,5 @@
 #include <stdbool.h>
 #include "../globals.c"
-#include "cactus_sprite.c"
 #include "../rand.c"
 #include "scoreboard.c"
 
