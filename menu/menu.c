@@ -19,19 +19,19 @@ void init_menu() {
   }
 
   // Setup "Press Start"
-  write_text("Press", 5, 24, 44, 120);
-  write_text("Start", 5, 29, 92, 120);
+  write_text("Press", 5, 24, 44, 112);
+  write_text("Start", 5, 29, 92, 112);
 
   toggle_tip_ticks = TICK_TOGGLE;
 }
 
 void show_text() {
   for (uint8_t i = 0; i < 5; i++) {
-    move_sprite(24 + i, 44 + (i * 8), 120);
+    move_sprite(24 + i, 44 + (i * 8), 112);
   }
 
   for (uint8_t i = 0; i < 5; i++) {
-    move_sprite(29 + i, 92 + (i * 8), 120);
+    move_sprite(29 + i, 92 + (i * 8), 112);
   }
 }
 

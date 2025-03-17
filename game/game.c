@@ -4,6 +4,7 @@
 #include "../globals.c"
 #include "scoreboard.c"
 #include "../text.c"
+#include "../bkg/bkg.c"
 
 #ifndef GAME_C
 #define GAME_C
@@ -46,6 +47,7 @@ void tick_game() {
       hide_paused_text();
     }
 
+    tick_bkg(2);
     tick_trex();
     tick_cactus();
     tick_score();
