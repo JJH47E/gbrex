@@ -9,8 +9,9 @@
 #include "game/cactus_sprite.c"
 #include "game/trex_sprite.c"
 #include "menu/logo_sprite.c"
+#include "bkg/floor_tiles.c"
 
-// Load tiles into RAM
+// Load tiles into VRAM
 void load_tiles() {
   // Load logo data
   set_sprite_data(100, 24, logo_sprite_tiles);
@@ -26,6 +27,9 @@ void load_tiles() {
   for (uint8_t i = 0; i < 27; i++) {
     set_sprite_data(40 + i, 1, alphabet_sprites[i]);
   }
+  // Load background tiles
+  set_bkg_data(0, 5, floor_tiles);
+  set_bkg_data(10, 1, earth_tile);
 }
 
 void main(void)
@@ -33,8 +37,10 @@ void main(void)
   game_state = MENU;
 
   load_tiles();
+  init_floor();
   init_menu();
   
+  SHOW_BKG;
   SHOW_SPRITES;
   
   while(1) {
