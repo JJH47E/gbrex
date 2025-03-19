@@ -1,7 +1,8 @@
-#include "../globals.c"
-
-#ifndef GAME_OVER_C
-#define GAME_OVER_C
+#include <stdio.h>
+#include <gb/gb.h>
+#include "game_over.h"
+#include "../text.h"
+#include "../globals.h"
 
 void init_game_over() {
   write_text("Game", 4, 0, 44, 30);
@@ -30,5 +31,3 @@ void tick_game_over() {
     reset();
   }
 }
-
-#endif

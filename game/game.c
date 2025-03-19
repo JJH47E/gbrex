@@ -1,13 +1,11 @@
 #include <stdbool.h>
-#include "trex_init.c"
-#include "cacti.c"
-#include "../globals.c"
-#include "scoreboard.c"
-#include "../text.c"
-#include "../bkg/bkg.c"
-
-#ifndef GAME_C
-#define GAME_C
+#include <gb/gb.h>
+#include "trex_init.h"
+#include "cacti.h"
+#include "../globals.h"
+#include "scoreboard.h"
+#include "../text.h"
+#include "../bkg/bkg.h"
 
 bool is_paused = false;
 bool is_pause_toggled = false;
@@ -93,5 +91,3 @@ void dispose_game() {
     move_sprite(i, 0, 0);
   }
 }
-
-#endif

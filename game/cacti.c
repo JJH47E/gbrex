@@ -1,10 +1,10 @@
+#include <gb/gb.h>
 #include <stdbool.h>
-#include "../globals.c"
-#include "../rand.c"
-#include "scoreboard.c"
-
-#ifndef CACTI_C
-#define CACTI_C
+#include "../globals.h"
+#include "../globals.h"
+#include "../rand.h"
+#include "scoreboard.h"
+#include "cacti.h"
 
 #define SPAWN_POSITION 190
 
@@ -110,5 +110,3 @@ void init_cacti() {
     despawn_cactus(i);
   }
 }
-
-#endif

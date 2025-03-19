@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <gb/gb.h>
-#include "globals.c"
-#include "game/game.c"
-#include "menu/menu.c"
-#include "game_over/game_over.c"
-#include "sprites/alphabet.c"
-#include "sprites/numbers.c"
-#include "game/cactus_sprite.c"
-#include "game/trex_sprite.c"
-#include "menu/logo_sprite.c"
-#include "bkg/floor_tiles.c"
+#include "globals.h"
+#include "game/game.h"
+#include "menu/menu.h"
+#include "game_over/game_over.h"
+#include "sprites/alphabet.h"
+#include "sprites/numbers.h"
+#include "game/cactus_sprite.h"
+#include "game/trex_sprite.h"
+#include "menu/logo_sprite.h"
+#include "bkg/bkg.h"
+#include "bkg/floor_tiles.h"
 
 // Load tiles into VRAM
 void load_tiles() {

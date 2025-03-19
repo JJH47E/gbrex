@@ -1,7 +1,7 @@
+#include <stdio.h>
+#include <gb/gb.h>
 #include <rand.h>
-
-#ifndef RAND_C
-#define RAND_C
+#include "rand.h"
 
 void init_rand() {
   UBYTE seed = DIV_REG;
@@ -39,5 +39,3 @@ uint8_t get_diff(uint8_t rhs, uint8_t lhs) {
     return lhs - rhs;
   }
 }
-
-#endif

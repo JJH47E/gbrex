@@ -1,23 +1,14 @@
+#include "globals.h"
+#include <gb/gb.h>
 #include <ctype.h>
-
-#ifndef GLOBALS_C
-#define GLOBALS_C
-
-#define GROUND_Y 112
-#define GRAVITY 1
-#define MAX_CACTI 3
-
-enum State {
-  MENU,
-  INGAME,
-  GAMEOVER
-};
+#include "menu/menu.h"
+#include "game/game.h"
 
 uint16_t score = 0;
-enum State game_state = MENU;
+State game_state = MENU;
 bool loading_new_scene = false;
 
-void transition_scene(enum State new_scene) {
+void transition_scene(State new_scene) {
   switch (game_state) {
     case MENU:
       dispose_menu();
@@ -46,5 +37,3 @@ uint8_t char_to_alphabet_index(uint8_t c) {
     return -1;
   }
 }
-
-#endif

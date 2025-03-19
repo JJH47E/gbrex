@@ -1,5 +1,4 @@
-#ifndef FLOOR_TILES_C
-#define FLOOR_TILES_C
+#include "floor_tiles.h"
 
 const uint8_t floor_tiles[80] = {
   // air
@@ -35,7 +34,3 @@ const uint8_t earth_tile[] = {
   0xff,0x00,0xff,0x00,
   0xff,0x00,0xff,0x00
 };
-
-
-
-#endif
