@@ -5,7 +5,7 @@
 #ifndef GLOBALS_C
 #define GLOBALS_C
 
-#define GROUND_Y 120
+#define GROUND_Y 112
 #define GRAVITY 1
 #define MAX_CACTI 3
 
