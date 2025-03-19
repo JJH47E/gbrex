@@ -1,7 +1,4 @@
-#include <gb/gb.h>
-
-#ifndef ALPHABET_C
-#define ALPHABET_C
+#include "alphabet.h"
 
 const uint8_t alphabet_sprites[27][16] = {
   // Whitespace
@@ -193,5 +190,3 @@ const uint8_t alphabet_sprites[27][16] = {
     0x40,0x00,0x7e,0x00
   },
 };
-
-#endif

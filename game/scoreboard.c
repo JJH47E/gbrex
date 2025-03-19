@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <gb/gb.h>
-#include "../globals.c"
-
-#ifndef SCOREBOARD_C
-#define SCOREBOARD_C
+#include "../globals.h"
 
 #define NB_DIGITS 39
 #define NB_TENS 38
@@ -39,5 +36,3 @@ void init_score() {
   move_sprite(NB_TENS, 142, 30);
   move_sprite(NB_HUNDREDS, 134, 30);
 }
-
-#endif

@@ -1,6 +1,7 @@
 #include <stdbool.h>
-#include "../globals.c"
-#include "../text.c"
+#include <gb/gb.h>
+#include "../globals.h"
+#include "../text.h"
 
 #ifndef MENU_C
 #define MENU_C

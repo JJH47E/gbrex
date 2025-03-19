@@ -57,5 +57,10 @@ dkms.conf
 # MacOS
 .DS_Store
 
+# GBDK
+*.asm
+*.lst
+*.sym
+
 # ROM files
 *.gb

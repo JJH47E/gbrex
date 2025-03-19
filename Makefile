@@ -4,7 +4,8 @@ SRCS    = globals.c rand.c text.c trex.c \
           game/cacti.c game/cactus_sprite.c game/game.c game/scoreboard.c game/trex_init.c game/trex_sprite.c \
           game_over/game_over.c \
           menu/logo_sprite.c menu/menu.c \
-          sprites/alphabet.c sprites/numbers.c
+          sprites/alphabet.c sprites/numbers.c \
+          bkg/bkg.c bkg/floor_map.c bkg/floor_tiles.c
 OBJS    = $(SRCS:.c=.o)
 
 all: $(BINS)

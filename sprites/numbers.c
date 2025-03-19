@@ -1,7 +1,4 @@
-#include <gb/gb.h>
-
-#ifndef NUMBERS_C
-#define NUMBERS_C
+#include "numbers.h"
 
 const uint8_t number_sprites[10][16] = {
   // 0
@@ -75,5 +72,3 @@ const uint8_t number_sprites[10][16] = {
     0x7e, 0x00, 0x7e, 0x00
   }
 };
-
-#endif
