@@ -1,3 +1,5 @@
+#include <gb/gb.h>
+
 #ifndef NUMBERS_C
 #define NUMBERS_C
 

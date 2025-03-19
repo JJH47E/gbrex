@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <gb/gb.h>
+#include "../text.c"
 #include "../globals.c"
 
 #ifndef GAME_OVER_C

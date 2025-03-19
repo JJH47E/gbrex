@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <gb/gb.h>
+#include "../globals.c"
+
 #ifndef SCOREBOARD_C
 #define SCOREBOARD_C
 

@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <gb/gb.h>
 #include <ctype.h>
 
 #ifndef GLOBALS_C

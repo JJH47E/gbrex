@@ -1,3 +1,5 @@
+#include <gb/gb.h>
+
 #ifndef ALPHABET_C
 #define ALPHABET_C
 

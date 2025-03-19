@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <gb/gb.h>
 #include <rand.h>
 
 #ifndef RAND_C
