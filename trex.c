@@ -45,8 +45,6 @@ void main(void)
   SHOW_SPRITES;
   
   while(1) {
-    vsync();
-
     if (loading_new_scene) {
       switch (game_state) {
         case MENU:
@@ -76,6 +74,7 @@ void main(void)
         break;
     }
 
-    delay(15);
+    delay(25);
+    vsync();
   }
 }
