@@ -79,6 +79,6 @@ void main(void)
         break;
     }
 
-    delay(15);
+    delay(25);
   }
 }

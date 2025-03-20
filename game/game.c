@@ -54,7 +54,6 @@ void tick_game(void) {
     tick_bkg(2);
     tick_trex();
     tick_cactus();
-    tick_score();
 
     if (y > GROUND_Y - 16) {
       for (uint8_t i = 0; i < MAX_CACTI; i++) {
