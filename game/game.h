@@ -3,5 +3,6 @@
 
 void tick_game(void);
 void dispose_game(void);
+void init_game(void);
 
 #endif

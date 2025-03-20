@@ -8,6 +8,9 @@
 
 #define SPAWN_POSITION 190
 
+void tick_cactus(void);
+void init_cacti(void);
+
 uint8_t random_seed;
 uint8_t cactus_y[MAX_CACTI] = {0, 0, 0};
 uint8_t cactus_x[MAX_CACTI] = {0, 0, 0};
@@ -65,7 +68,7 @@ void respawn_cactus(uint8_t cactus_index) {
   is_present[cactus_index] = true;
 }
 
-void tick_cactus() {
+void tick_cactus(void) {
   for (uint8_t i = 0; i < MAX_CACTI; ++i) {
     if (is_present[i]) {
       scroll_cactus(i, -2, 0);
@@ -89,7 +92,7 @@ void tick_cactus() {
   }
 }
 
-void init_cacti() {
+void init_cacti(void) {
   init_rand();
 
   random_seed = get_random(50, 255);
