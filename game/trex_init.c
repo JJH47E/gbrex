@@ -8,6 +8,10 @@
 #define SPRITE_4 3
 #define JUMP_STRENGTH -8
 
+void tick_trex(void);
+void try_jump_trex(void);
+void init_trex(void);
+
 int8_t velocity = 0;
 uint8_t y = GROUND_Y;
 uint8_t x = 20;
@@ -22,7 +26,7 @@ void move_trex(uint8_t target_x, uint8_t target_y) {
   move_sprite(SPRITE_4, x + 8, y + 8);
 }
 
-void tick_trex() {
+void tick_trex(void) {
   uint8_t temp_y = y;
   temp_y += velocity;
   if (temp_y >= GROUND_Y) {
@@ -37,13 +41,13 @@ void tick_trex() {
   }
 }
 
-void try_jump_trex() {
+void try_jump_trex(void) {
   if (y == GROUND_Y) {
     velocity = JUMP_STRENGTH;
   }
 }
 
-void init_trex() {
+void init_trex(void) {
   set_sprite_tile(SPRITE_1, 0);
   set_sprite_tile(SPRITE_2, 1);
   set_sprite_tile(SPRITE_3, 2);

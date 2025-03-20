@@ -4,7 +4,10 @@
 #include "../text.h"
 #include "../globals.h"
 
-void init_game_over() {
+void init_game_over(void);
+void tick_game_over(void);
+
+void init_game_over(void) {
   write_text("Game", 4, 0, 44, 30);
   write_text("Over", 4, 4, 92, 30);
 
@@ -25,7 +28,7 @@ void init_game_over() {
   write_text("again", 5, 30, 84, 112);
 }
 
-void tick_game_over() {
+void tick_game_over(void) {
   if (joypad() & J_A) {
     // Being lazy, this should point to game/menu scene
     reset();
