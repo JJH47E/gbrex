@@ -9,6 +9,6 @@ extern uint8_t cactus_x[MAX_CACTI];
 extern bool is_present[MAX_CACTI];
 
 void init_cacti(void);
-void tick_cacti(void);
+void tick_cactus(void);
 
 #endif

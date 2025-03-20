@@ -12,8 +12,11 @@
 #include "bkg/bkg.h"
 #include "bkg/floor_tiles.h"
 
+void load_tiles(void);
+void main(void);
+
 // Load tiles into VRAM
-void load_tiles() {
+void load_tiles(void) {
   // Load logo data
   set_sprite_data(100, 24, logo_sprite_tiles);
   // Load cactus data
@@ -76,6 +79,6 @@ void main(void)
         break;
     }
 
-    delay(15);
+    delay(25);
   }
 }

@@ -7,10 +7,16 @@
 #include "../text.h"
 #include "../bkg/bkg.h"
 
+void init_game(void);
+void hide_paused_text(void);
+void show_paused_text(void);
+void tick_game(void);
+void dispose_game(void);
+
 bool is_paused = false;
 bool is_pause_toggled = false;
 
-void init_game() {
+void init_game(void) {
   init_trex();
   init_cacti();
   init_score();
@@ -19,19 +25,19 @@ void init_game() {
   hide_paused_text();
 }
 
-void show_paused_text() {
+void show_paused_text(void) {
   for (uint8_t i = 0; i < 6; i++) {
     move_sprite(30 + i, 64 + (i * 8), 68);
   }
 }
 
-void hide_paused_text() {
+void hide_paused_text(void) {
   for (uint8_t i = 0; i < 6; i++) {
     move_sprite(30 + i, 0, 0);
   }
 }
 
-void tick_game() {
+void tick_game(void) {
   if (joypad() & J_START) {
     is_paused = !is_paused;
 
@@ -48,7 +54,6 @@ void tick_game() {
     tick_bkg(2);
     tick_trex();
     tick_cactus();
-    tick_score();
 
     if (y > GROUND_Y - 16) {
       for (uint8_t i = 0; i < MAX_CACTI; i++) {
@@ -85,7 +90,7 @@ void tick_game() {
   is_pause_toggled = false;
 }
 
-void dispose_game() {
+void dispose_game(void) {
   // Move all sprites off-screen
   for (uint8_t i = 0; i < 40; i++) {
     move_sprite(i, 0, 0);

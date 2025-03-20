@@ -3,9 +3,14 @@
 #include <rand.h>
 #include "rand.h"
 
-void init_rand() {
+void init_rand(void);
+uint8_t get_random(uint8_t min, uint8_t max);
+uint8_t fast_random(uint8_t seed);
+uint8_t get_diff(uint8_t rhs, uint8_t lhs);
+
+void init_rand(void) {
   UBYTE seed = DIV_REG;
-  seed |= (UWORD)DIV_REG << 8;
+  seed |= (UWORD)DIV_REG << 4;
 
   initarand(seed);
 }
