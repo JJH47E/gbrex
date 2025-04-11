@@ -8,3 +8,7 @@ This project uses the [GBDK](https://github.com/gbdk-2020/gbdk-2020) development
 
 <img src="./assets/title-screenshot.png" alt="icon" width="256" height="256">
 <img src="./assets/screenshot.png" alt="icon" width="256" height="256">
+
+## Build instructions
+
+This project includes a pre-configured makefile. To build the project, install [GBDK](https://github.com/gbdk-2020/gbdk-2020) and run `make` in the root of the project.
